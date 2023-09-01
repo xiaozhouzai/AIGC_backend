@@ -33,4 +33,9 @@
     <select id="createChartDataTable" parameterType="string">
         ${querysql}
     </select>
+
+    <select id="selectChartData" parameterType="string" resultType="map">
+        ${sql}
+    </select>
+
 </mapper>

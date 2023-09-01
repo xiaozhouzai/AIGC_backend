@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
+
 @Service
 public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements ChartService {
 
@@ -61,6 +63,11 @@ public class ChartServiceImpl extends ServiceImpl<ChartMapper, Chart> implements
     @Override
     public void insertChartTable(String sql) {
         chartMapper.insertChartTable(sql);
+    }
+
+    @Override
+    public List<Map<Integer, String>> selectChartData(String sql) {
+        return chartMapper.selectChartData(sql);
     }
 
 }

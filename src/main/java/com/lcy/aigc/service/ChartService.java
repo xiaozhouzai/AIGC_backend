@@ -7,6 +7,7 @@ import com.lcy.aigc.model.dto.chart.ChartQueryRequest;
 import com.lcy.aigc.model.entity.Chart;
 
 import java.util.List;
+import java.util.Map;
 
 /**
 * @author lcyzh
@@ -22,4 +23,6 @@ public interface ChartService extends IService<Chart> {
     List<String> getTableColumns(String tableName);
 
     void insertChartTable(String sql);
+
+    List<Map<Integer,String>>  selectChartData(String sql);
 }

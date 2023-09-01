@@ -2,11 +2,13 @@ package com.lcy.aigc.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lcy.aigc.model.entity.Chart;
+import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
+import java.util.Map;
 
 /**
 * @author lcyzh
@@ -29,8 +31,8 @@ public interface ChartMapper extends BaseMapper<Chart> {
     List<String> getTableColumns(@Param("tableName") String tableName);
 
     void insertChartTable(String sql);
-
-
+    @MapKey("id")
+    List<Map<Integer,String>>  selectChartData(String sql);
 
 
 }

@@ -114,7 +114,7 @@ public class UserBlogController {
         queryWrapper.eq(id != null,UserBlog::getUserId,id);
         List<UserBlog> list = userBlogService.list(queryWrapper);
         if (list.size() == 0){
-            throw new BusinessException(10001,"您还没有博客");
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR,"您还没有博客");
         }
         return ResultUtils.success(list);
     }
